@@ -19,6 +19,19 @@ export default function MindMap() {
 	});
 	instance.init(MindElixir.new('root'));
 	mindRef.current = instance;
+
+	const handleResize = () => {
+	    if (mindRef.current) {
+		mindRef.current.resize();
+	    }
+	};
+	window.addEventListener("resize", handleResize);
+	setTimeout(handleResize, 100);
+
+	return () => {
+	    window.removeEventListener("resize", handleResize);
+	};
+	
     }, []);
 
     useEffect(() => {
@@ -48,7 +61,7 @@ export default function MindMap() {
     };
 
     return (
-	<div id="map" style={{ height: "100vh", backgroundColor: "#f3f4f6" }}>
+	<div id="map" style={{ height: "100vh", width: "100%", backgroundColor: "#f3f4f6" }}>
 	    <div style={{ textAlign: "center", padding: "10px" }}>
 		<button onClick={handleSave} style={{ marginRight: "10px" }}>
 		    Save Mind Map

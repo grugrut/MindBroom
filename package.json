@@ -1,5 +1,5 @@
 {
-    "name": "mindmap-electron",
+    "name": "BrainBloom",
     "author": "grugrut",
     "description": "A mind mapping application built with MindElixir, React, Vite, and Electron.",
     "private": true,
@@ -41,8 +41,8 @@
 	"vite": "^7.1.7"
     },
     "build": {
-	"appId": "net.grugrut.mindmap",
-	"productName": "MindMap",
+	"appId": "net.grugrut.brainbloom",
+	"productName": "BrainBloom",
 	"files": [
 	    "dist/**/*",
 	    "main.js",
